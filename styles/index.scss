@@ -1,0 +1,45 @@
+$color3: #D6EBF8;
+$color1: #90C133;
+$color2: #103353;
+
+$purple: #662D91;
+
+$browser-context: 16;
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+$small-breakpoint: em(1024) !default;
+
+@mixin respond-to($media) {
+  @if $media == non-mobile {
+    @media only screen and (min-width: $small-breakpoint) { @content; }
+  }
+}
+
+@mixin center {
+	top: 50%;
+	left:50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+@mixin center-vertical {
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+
+@mixin center-horizontal {
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0 0 0 0;
+}
+
+
