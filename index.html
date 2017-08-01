@@ -11,16 +11,29 @@
 <body>
 	<div class="container">
 		<div class="li-form">
+			<div class="li-form__icon"></div>
 			<div class="start">
-				<div class="start__icon"></div>
 				<span>Compare and save on life insurance</span>
 				<div class="start__button">
 					<span>Get Started</span>
 				</div>
 			</div>
-			<div class="gender"></div>
-			<div class="smoker"></div>
-			<div class="age"></div>
+			<form>		
+				<div class="form-field form-field--gender">
+					<h1>What's your gender?</h1>
+					<div class="form-field__select">
+						<div class="form-field__button"><span>Male</span></div>
+						<div class="form-field__button"><span>Female</span></div>
+					</div>
+				</div>
+				<div class="form-field form-field--smoker">
+					<span>Have you smoked tobacco or any other substance in the past 12 months?</span>
+				</div>
+				<div class="form-field form-field--age">
+					<span>How old are you?</span>
+					<input type="text">
+				</div>
+			</form>
 		</div>
 	</div>
 </body>

@@ -66,22 +66,87 @@ html, body {
 	height: 450px;
 	position: relative;
 	background-color: #F8F8F9;
-	border-top: 8px solid #f1f1f1;
+	border-top: 8px solid $purple;
 	@include respond-to('non-mobile') {	
 		height: 100%;
 		width: 100%;
 		box-sizing: border-box;
 		padding: 0 20px 0 20px;
 	}
+	&__icon {
+		@include center-horizontal;
+		position: relative;
+		background-color: #f1f1f1;
+		border-radius: 50%;
+		width: 100px;
+		height: 100px;
+		margin: 10px 0 0 0;
+	}
+	form {
+		margin: 10px 0 0 0;
+		height: calc(100% - 120px);
+		width: 100%;
+	}
+}
+
+.form-field {
+	height: 50%;
+	width: 100%;
+	h1 {
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+		font-family: 'Oswald', sans-serif;
+		text-align: center;
+	}
+	&--smoker, &--age {
+		display: none; // TEMP
+	}
+	input {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		outline: none;
+		box-shadow: none;
+		border: none;
+		background-color: inherit;
+		height: 90%;
+		width: 100%;
+		font-size: 2em;
+	}
+	&__select {
+		width: 100%;
+		height: 80px;
+		padding: 0 10px 0 10px;
+		box-sizing: border-box;
+		margin: 20px 0 0 0;
+	}
+	&__button {
+		width: 50%;
+		height: 100%;
+		float: left;
+		background-color: $purple;
+		span {
+			@include center;
+			font-family: 'UniversLight';
+			font-size: 1.6em;
+			margin: 4px 0 0 0;
+			color: white;
+			position: relative;
+			text-align: center;
+			display: inline-block;
+		}
+	}
 }
 
 .start {
+	display: none; // TEMP
 	width: 100%;
 	height: 100%;
-	font-family: 'UniversLight';
 	padding: 75px 0 0 0;
 	span {
 		@include center-horizontal;
+		font-family: 'Oswald', sans-serif;
+		padding: 0 10px 0 10px;
 		position: relative;
 		text-align: center;
 		display: inline-block;
@@ -96,20 +161,12 @@ html, body {
 		background-color: $green;
 		span {
 			@include center;
-			margin: 5px 0 0 0;
+			font-family: 'UniversLight';
+			margin: 4px 0 0 0;
 			color: white;
 			position: relative;
 			text-align: center;
 			display: inline-block;
 		}
-	}
-	&__icon {
-		@include center-horizontal;
-		position: relative;
-		background-color: #f1f1f1;
-		border-radius: 50%;
-		width: 100px;
-		height: 100px;
-		margin: 0 0 50px 0;
 	}
 }
