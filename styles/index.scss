@@ -1,8 +1,5 @@
-$color3: #D6EBF8;
-$color1: #90C133;
-$color2: #103353;
-
 $purple: #662D91;
+$green: #4CAE4C;
 
 $browser-context: 16;
 @function em($pixels, $context: $browser-context) {
@@ -10,6 +7,16 @@ $browser-context: 16;
 }
 
 $small-breakpoint: em(1024) !default;
+
+@font-face {
+    font-family: 'UniversBlack';
+   	src:  url('../fonts/UniversLTStd-Black.otf');
+}
+
+@font-face {
+    font-family: 'UniversLight';
+   	src:  url('../fonts/UniversLTStd-Light.otf');
+}
 
 @mixin respond-to($media) {
   @if $media == non-mobile {
@@ -42,4 +49,58 @@ html, body {
 	margin: 0 0 0 0;
 }
 
+.container {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	@include respond-to('non-mobile') {	
+		height: 425px;
+		width: 100%;
+	}
+}
 
+.li-form {
+	@include center-horizontal;
+	top: 50px;
+	width: 95%;
+	height: 450px;
+	position: relative;
+	border-radius: 5px;
+	background-color: #F8F8F9;
+	@include respond-to('non-mobile') {	
+		height: 100%;
+		width: 100%;
+		box-sizing: border-box;
+		padding: 0 20px 0 20px;
+	}
+}
+
+.start {
+	width: 100%;
+	height: 100%;
+	font-family: 'UniversLight';
+	padding: 150px 0 0 0;
+	span {
+		@include center-horizontal;
+		position: relative;
+		text-align: center;
+		display: inline-block;
+		font-size: 1.7em;
+	}
+	&__button {
+		@include center-horizontal;
+		position: relative;
+		margin: 20px 0 0 0;
+		width: 200px;
+		height: 50px;
+		background-color: $green;
+		span {
+			@include center;
+			margin: 5px 0 0 0;
+			color: white;
+			position: relative;
+			text-align: center;
+			display: inline-block;
+		}
+	}
+}
