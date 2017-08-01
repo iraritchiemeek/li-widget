@@ -90,8 +90,8 @@ html, body {
 	}
 	&__action {
 		@include center-horizontal;
-		position: relative;
-		top: 90px;
+		position: absolute;
+		bottom: 20px;
 		width: 140px;
 		height: 50px;
 		background-color: $green;
@@ -111,11 +111,13 @@ html, body {
 .form-field {
 	height: 50%;
 	width: 100%;
+	display: none;
 	h1 {
 		margin: 0 0 0 0;
 		padding: 0 0 0 0;
 		font-family: 'Oswald', sans-serif;
 		text-align: center;
+		font-size: 1.6em;
 	}
 	&--smoker, &--age {
 		display: none; // TEMP

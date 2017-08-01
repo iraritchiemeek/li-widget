@@ -53,8 +53,8 @@ html, body {
     left: 50%;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
-    position: relative;
-    top: 90px;
+    position: absolute;
+    bottom: 20px;
     width: 140px;
     height: 50px;
     background-color: #4CAE4C; }
@@ -73,12 +73,14 @@ html, body {
 
 .form-field {
   height: 50%;
-  width: 100%; }
+  width: 100%;
+  display: none; }
   .form-field h1 {
     margin: 0 0 0 0;
     padding: 0 0 0 0;
     font-family: 'Oswald', sans-serif;
-    text-align: center; }
+    text-align: center;
+    font-size: 1.6em; }
   .form-field--smoker, .form-field--age {
     display: none; }
   .form-field input {
