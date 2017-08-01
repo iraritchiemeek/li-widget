@@ -65,8 +65,8 @@ html, body {
 	width: 95%;
 	height: 450px;
 	position: relative;
-	border-radius: 5px;
 	background-color: #F8F8F9;
+	border-top: 8px solid #f1f1f1;
 	@include respond-to('non-mobile') {	
 		height: 100%;
 		width: 100%;
@@ -79,7 +79,7 @@ html, body {
 	width: 100%;
 	height: 100%;
 	font-family: 'UniversLight';
-	padding: 150px 0 0 0;
+	padding: 75px 0 0 0;
 	span {
 		@include center-horizontal;
 		position: relative;
@@ -102,5 +102,14 @@ html, body {
 			text-align: center;
 			display: inline-block;
 		}
+	}
+	&__icon {
+		@include center-horizontal;
+		position: relative;
+		background-color: #f1f1f1;
+		border-radius: 50%;
+		width: 100px;
+		height: 100px;
+		margin: 0 0 50px 0;
 	}
 }
