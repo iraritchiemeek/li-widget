@@ -27,7 +27,7 @@ html, body {
   height: 450px;
   position: relative;
   background-color: #F8F8F9;
-  border-top: 8px solid #662D91; }
+  border-top: 8px solid #F1F1F1; }
   @media only screen and (min-width: 64em) {
     .li-form {
       height: 100%;
@@ -43,7 +43,10 @@ html, body {
     border-radius: 50%;
     width: 100px;
     height: 100px;
-    margin: 10px 0 0 0; }
+    margin: 10px 0 0 0;
+    background-image: url("../imgs/doctor.svg");
+    background-size: contain;
+    background-position: center; }
   .li-form form {
     display: none;
     margin: 10px 0 0 0;
