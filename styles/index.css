@@ -45,6 +45,7 @@ html, body {
     height: 100px;
     margin: 10px 0 0 0; }
   .li-form form {
+    display: none;
     margin: 10px 0 0 0;
     height: calc(100% - 120px);
     width: 100%; }
@@ -121,7 +122,6 @@ html, body {
       display: inline-block; }
 
 .start {
-  display: none;
   width: 100%;
   height: 100%;
   padding: 75px 0 0 0; }
