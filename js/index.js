@@ -15,9 +15,11 @@ $(document).ready(function () {
 			setCurrentFieldData('age')
 			showCurrentFormField()
 		} else if ($('.li-form form').data('current') == 'age') {
-			// setCurrentFieldData('cover-amount')
-			// showCurrentFormField()
-			validAge()
+			if (validAge()) {
+				setCurrentFieldData('cover-amount')
+				showCurrentFormField()
+			}
+			
 		}
 	})
 
@@ -58,6 +60,13 @@ $(document).ready(function () {
 	    			})
 	        	})
 	        	break;
+            case 'cover-amount':
+            	$('.li-form form').fadeOut(function () {
+        			$('.form-field--age').hide()
+        			$('.form-field--cover-amount').show()
+        			$('.li-form form').fadeIn()
+            	})
+            	break;
 		}
 	}
 

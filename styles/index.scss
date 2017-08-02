@@ -1,22 +1,15 @@
 $purple: #662D91;
 $green: #4CAE4C;
 
+$body-font: Arial, Helvetica, sans-serif;
+$oswald-font: 'Oswald', Arial, Helvetica, sans-serif;
+
 $browser-context: 16;
 @function em($pixels, $context: $browser-context) {
   @return #{$pixels/$context}em;
 }
 
 $small-breakpoint: em(1024) !default;
-
-@font-face {
-    font-family: 'UniversBlack';
-   	src:  url('../fonts/UniversLTStd-Black.otf');
-}
-
-@font-face {
-    font-family: 'UniversLight';
-   	src:  url('../fonts/UniversLTStd-Light.otf');
-}
 
 @mixin respond-to($media) {
   @if $media == non-mobile {
@@ -100,9 +93,8 @@ html, body {
 		background-color: $green;
 		span {
 			@include center;
-			font-family: 'UniversLight';
+			font-family: $oswald-font;
 			font-size: 1.6em;
-			margin: 4px 0 0 0;
 			color: white;
 			position: relative;
 			text-align: center;
@@ -116,11 +108,11 @@ html, body {
 	width: 100%;
 	display: none;
 	h1 {
-		margin: 0 0 0 0;
+		margin: 0 10px 0 10px;
 		padding: 0 0 0 0;
-		font-family: 'Oswald', sans-serif;
+		font-family: $oswald-font;
 		text-align: center;
-		font-size: 1.6em;
+		font-size: 1.4em;
 	}
 	&--smoker, &--age {
 		display: none; // TEMP
@@ -163,9 +155,8 @@ html, body {
 		background-color: rgba(102, 45, 145, 0.5);
 		span {
 			@include center;
-			font-family: 'UniversLight';
+			font-family: $body-font;
 			font-size: 1.6em;
-			margin: 4px 0 0 0;
 			color: white;
 			position: relative;
 			text-align: center;
@@ -179,7 +170,7 @@ html, body {
 			text-align: center;
 			width: 60%;
 			top: 20px;
-			font-family: 'Oswald', sans-serif;
+			font-family: $oswald-font;
 			display: inline-block;
 			opacity: 0;
 			color: red;
@@ -194,7 +185,7 @@ html, body {
 	padding: 75px 0 0 0;
 	span {
 		@include center-horizontal;
-		font-family: 'Oswald', sans-serif;
+		font-family: $oswald-font;
 		padding: 0 10px 0 10px;
 		position: relative;
 		text-align: center;
@@ -210,8 +201,8 @@ html, body {
 		background-color: $green;
 		span {
 			@include center;
-			font-family: 'UniversLight';
-			margin: 4px 0 0 0;
+			font-family: $body-font;
+			font-weight: 400;
 			color: white;
 			position: relative;
 			text-align: center;
