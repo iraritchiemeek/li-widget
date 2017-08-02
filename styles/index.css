@@ -68,7 +68,7 @@ html, body {
       display: inline-block; }
 
 .form-field {
-  height: 50%;
+  height: 250px;
   width: 100%;
   display: none; }
   .form-field h1 {
@@ -79,24 +79,6 @@ html, body {
     font-size: 1.4em; }
   .form-field--smoker, .form-field--age {
     display: none; }
-  .form-field input {
-    left: 50%;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    position: relative;
-    text-align: center;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    outline: none;
-    box-shadow: none;
-    border: 1px solid #E5E5E4;
-    background-color: white;
-    height: 50px;
-    width: 50%;
-    font-size: 2.5em;
-    color: #662D91;
-    margin: 20px 0 0 0; }
   .form-field__select {
     width: 100%;
     height: 70px;
@@ -138,6 +120,132 @@ html, body {
     opacity: 0;
     color: red;
     display: inline-block; }
+  .form-field--age input {
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    position: relative;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #E5E5E4;
+    background-color: white;
+    height: 50px;
+    width: 50%;
+    font-size: 2.5em;
+    color: #662D91;
+    margin: 20px 0 0 0; }
+
+input[type=range] {
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -webkit-appearance: none;
+  /* Hides the slider so that custom slider can be made */
+  background: transparent;
+  /* Otherwise white in Chrome */
+  width: 90%;
+  position: relative;
+  margin: 35px 0 0 0;
+  padding: 0 0 0 0;
+  top: 50%; }
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; }
+
+input[type=range]:focus {
+  outline: none; }
+
+input[type=range]::-ms-track {
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent; }
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  border-radius: 5px;
+  height: 30px;
+  width: 30px;
+  background-color: #662D91;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -13px;
+  /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */ }
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  border-radius: 5px;
+  height: 30px;
+  width: 30px;
+  background-color: #662D91;
+  cursor: pointer; }
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  border-radius: 5px;
+  height: 30px;
+  width: 30px;
+  background-color: #662D91;
+  cursor: pointer; }
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 80%;
+  position: relative;
+  height: 5px;
+  background-color: black;
+  cursor: pointer;
+  border-radius: 5px; }
+  @media only screen and (max-height: 560px) {
+    input[type=range]::-webkit-slider-runnable-track {
+      height: 3px; } }
+
+input[type=range]::-moz-range-track {
+  width: 80%;
+  position: relative;
+  height: 5px;
+  background-color: black;
+  cursor: pointer;
+  border-radius: 5px; }
+  @media only screen and (max-height: 560px) {
+    input[type=range]::-moz-range-track {
+      height: 3px; } }
+
+input[type=range]::-ms-track {
+  width: 80%;
+  position: relative;
+  height: 5px;
+  background-color: black;
+  cursor: pointer;
+  border-radius: 5px; }
+  @media only screen and (max-height: 560px) {
+    input[type=range]::-ms-track {
+      height: 3px; } }
+
+input[type=range]::-ms-fill-lower {
+  width: 80%;
+  position: relative;
+  height: 5px;
+  background-color: black;
+  cursor: pointer;
+  border-radius: 5px; }
+  @media only screen and (max-height: 560px) {
+    input[type=range]::-ms-fill-lower {
+      height: 3px; } }
+
+input[type=range]::-ms-fill-upper {
+  width: 80%;
+  position: relative;
+  height: 5px;
+  background-color: black;
+  cursor: pointer;
+  border-radius: 5px; }
+  @media only screen and (max-height: 560px) {
+    input[type=range]::-ms-fill-upper {
+      height: 3px; } }
 
 .start {
   width: 100%;

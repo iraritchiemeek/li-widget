@@ -104,7 +104,7 @@ html, body {
 }
 
 .form-field {
-	height: 50%;
+	height: 250px;
 	width: 100%;
 	display: none;
 	h1 {
@@ -116,23 +116,6 @@ html, body {
 	}
 	&--smoker, &--age {
 		display: none; // TEMP
-	}
-	input {
-		@include center-horizontal;
-		position: relative;
-		text-align: center;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		outline: none;
-		box-shadow: none;
-		border: 1px solid #E5E5E4;
-		background-color: white;
-		height: 50px;
-		width: 50%;
-		font-size: 2.5em;
-		color: $purple;
-		margin: 20px 0 0 0;
 	}
 	&__select {
 		width: 100%;
@@ -176,7 +159,107 @@ html, body {
 			color: red;
 			display: inline-block;
 		}
+		input {
+			@include center-horizontal;
+			position: relative;
+			text-align: center;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			outline: none;
+			box-shadow: none;
+			border: 1px solid #E5E5E4;
+			background-color: white;
+			height: 50px;
+			width: 50%;
+			font-size: 2.5em;
+			color: $purple;
+			margin: 20px 0 0 0;
+		}
 	}
+}
+
+input[type=range] {
+	@include center-horizontal;
+	-webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+	background: transparent; /* Otherwise white in Chrome */
+	width: 90%;
+	position: relative;
+	margin: 35px 0 0 0;
+	padding: 0 0 0 0;
+	top: 50%;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-ms-track {
+  cursor: pointer;
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+
+@mixin thumb {
+	border-radius: 5px;
+	height: 30px;
+	width: 30px;
+	background-color: $purple;
+	cursor: pointer;
+}
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  @include thumb;
+  -webkit-appearance: none;
+  margin-top: -13px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  @include thumb;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+	@include thumb;
+}
+
+@mixin slider {
+	width: 80%;
+	position: relative;
+	height: 5px;
+	background-color: black;
+	cursor: pointer;
+	border-radius: 5px;
+	@media only screen and (max-height: 560px) {
+		height: 3px;
+	}
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+	@include slider;
+}
+
+input[type=range]::-moz-range-track {
+	@include slider;
+}
+
+input[type=range]::-ms-track {
+	@include slider;
+}
+
+input[type=range]::-ms-fill-lower {
+	@include slider;
+}
+
+input[type=range]::-ms-fill-upper {
+	@include slider;
 }
 
 .start {
