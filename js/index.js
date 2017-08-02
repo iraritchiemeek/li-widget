@@ -1,12 +1,11 @@
 $(document).ready(function () {
 
-	// $('.start__button').click(function () {
-	// 	$('.start').fadeOut(function () {
-	// 		setCurrentFieldData('gender')
-	// 		showCurrentFormField()
-	// 		setProgress('25%')
-	// 	})
-	// })
+	var userInfo = {
+	    'gender': '',
+	    'smoker': false,
+	    'age': 20,
+	    'cover-amount': 350000
+	};
 
 	setCurrentFieldData('start')
 	showCurrentFormField()
@@ -17,20 +16,26 @@ $(document).ready(function () {
 			showCurrentFormField()
 			setProgress('25%')
 		} else if ($('.li-form form').data('current') == 'gender') {
+			setUseToggleData('gender', 'm', 'f')
 			setCurrentFieldData('smoker')
 			showCurrentFormField()
 			setProgress('50%')
 		} else if ($('.li-form form').data('current') == 'smoker') {
+			setUseToggleData('smoker', true, false)
 			setCurrentFieldData('age')
 			showCurrentFormField()
 			setProgress('75%')
 		} else if ($('.li-form form').data('current') == 'age') {
 			if (validAge()) {
+				userInfo['age'] = $('.form-field--age input').val()
 				setCurrentFieldData('cover-amount')
 				showCurrentFormField()
 				setProgress('100%')
 			}
-			
+		} else if ($('.li-form form').data('current') == 'cover-amount') {
+			// userInfo['cover-amount'] = parseInt($('.form-field--cover-amount span').text())
+			userInfo['cover-amount'] = parseFloat(convertSliderValue().replace(/,/g, ''));
+			console.log(userInfo)
 		}
 	})
 
@@ -56,9 +61,11 @@ $(document).ready(function () {
 
 	$('.form-field__button').click(function(e) {
 		if (e.target.dataset.pos == 'right') {
+			$('.form-field__selected').data('pos', 'right')
 			$('.form-field__selected').animate({'right': '20px'})
 			$('.form-field__selected').css({'left': 'initial'})
 		} else {
+			$('.form-field__selected').data('pos', 'left')
 			$('.form-field__selected').animate({'left': '20px'})
 			$('.form-field__selected').css({'right': 'initial'})
 		}
@@ -103,6 +110,7 @@ $(document).ready(function () {
 	        	$('.li-form form').fadeOut(function () {
 	    			$('.form-field').hide()
 	    			$('.form-field--age').show()
+	    			$('.next span').text('Next')
 	    			$('.li-form form').fadeIn(function () {
 	    				$('input').focus()
 	    			})
@@ -110,6 +118,7 @@ $(document).ready(function () {
 	        	break;
             case 'cover-amount':
             	$('.li-form form').fadeOut(function () {
+	    			$('.form-field--age span').css({'opacity': 0})
         			$('.form-field').hide()
         			$('.form-field--cover-amount').show()
         			$('.next span').text('Submit')
@@ -119,12 +128,20 @@ $(document).ready(function () {
 		}
 	}
 
+	function setUseToggleData(userProperty, option1, option2) {
+		if ($('.form-field__selected').data('pos') == 'left') {
+			userInfo[userProperty] = option1
+		} else {
+			userInfo[userProperty] = option2
+		}
+	}
+
 	function setProgress(fillPercent) {
 		$('.progress__fill').css({'width': fillPercent})
 	}
 
 	function validAge() {
-		var age = $('input').val()
+		var age = $('.form-field--age input').val()
 		if (age < 20 || age >= 70 ) {
 			$('.form-field--age span').css({'opacity': 1})
 			return false
