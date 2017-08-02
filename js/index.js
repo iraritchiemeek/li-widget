@@ -34,7 +34,7 @@ $(document).ready(function () {
 	})
 
 	$('input[type=range]').on('input', function () {
-		convertSliderValue()
+		$('.form-field--cover-amount span').text('$' + convertSliderValue())
 	})
 
 	function setCurrentFieldData(fieldName) {
@@ -86,7 +86,7 @@ $(document).ready(function () {
 
 	function convertSliderValue() {
 		var amounts = ['100,000', '150,000', '200,000', '250,000', '300,000', '350,000', '400,000', '500,000', '750,000', '1,000,000']
-		console.log(amounts[$('input[type=range]').val() - 1])
+		return(amounts[$('input[type=range]').val() - 1])
 	}
 
 })

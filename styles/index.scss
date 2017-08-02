@@ -177,6 +177,19 @@ html, body {
 			margin: 20px 0 0 0;
 		}
 	}
+	&--cover-amount {
+		span {
+			@include center-horizontal;
+			font-size: 2em;
+			position: relative;
+			text-align: center;
+			width: 60%;
+			top: 50px;
+			font-family: $body-font;
+			display: inline-block;
+			color: $purple;
+		}
+	}
 }
 
 input[type=range] {
