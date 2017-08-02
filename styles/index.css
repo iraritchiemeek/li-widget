@@ -57,6 +57,7 @@ html, body {
   .form-field--smoker, .form-field--age {
     display: none; }
   .form-field__select {
+    cursor: pointer;
     width: 100%;
     height: 70px;
     padding: 0 20px 0 20px;
@@ -71,7 +72,8 @@ html, body {
     width: 50%;
     height: 100%;
     float: left;
-    background-color: rgba(102, 45, 145, 0.5); }
+    background-color: rgba(102, 45, 145, 0.5);
+    transition-duration: 0.5s; }
     .form-field__button span {
       top: 50%;
       left: 50%;
@@ -83,6 +85,8 @@ html, body {
       position: relative;
       text-align: center;
       display: inline-block; }
+    .form-field__button:hover {
+      background-color: rgba(102, 45, 145, 0.7); }
   .form-field--age span {
     left: 50%;
     transform: translateX(-50%);
@@ -274,6 +278,7 @@ input[type=range]::-ms-fill-upper {
 .back {
   left: 10%;
   position: absolute;
+  cursor: pointer;
   height: 50px;
   width: 30px;
   background-image: url("../imgs/back-arrow.svg");
@@ -281,18 +286,23 @@ input[type=range]::-ms-fill-upper {
   background-position: center;
   background-repeat: no-repeat;
   bottom: 20px;
-  opacity: 0.5; }
+  opacity: 0.5;
+  transition-duration: 0.5s; }
+  .back:hover {
+    opacity: 0.8; }
 
 .next {
   left: 50%;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
+  cursor: pointer;
   position: absolute;
   bottom: 20px;
   width: 100px;
   height: 50px;
   border-radius: 5px;
-  background-color: #4CAE4C; }
+  background-color: #4CAE4C;
+  transition-duration: 0.5s; }
   .next span {
     top: 50%;
     left: 50%;
@@ -304,6 +314,21 @@ input[type=range]::-ms-fill-upper {
     position: relative;
     text-align: center;
     display: inline-block; }
+  .next:after {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    opacity: 0;
+    content: "";
+    position: absolute;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    transition-duration: 0.5s; }
+  .next:hover:after {
+    opacity: 0.1; }
 
 .progress {
   left: 50%;
