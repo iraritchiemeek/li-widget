@@ -32,16 +32,11 @@ html, body {
   -webkit-transform: translateX(-50%);
   top: 50px;
   width: 95%;
+  max-width: 600px;
   height: 450px;
   position: relative;
   background-color: #F8F8F9;
   border-top: 8px solid #F1F1F1; }
-  @media only screen and (min-width: 64em) {
-    .li-form {
-      height: 100%;
-      width: 100%;
-      box-sizing: border-box;
-      padding: 0 20px 0 20px; } }
   .li-form form {
     display: none;
     margin: 10px 0 0 0;

@@ -69,16 +69,11 @@ html, body {
 	@include center-horizontal;
 	top: 50px;
 	width: 95%;
+	max-width: 600px;
 	height: 450px;
 	position: relative;
 	background-color: #F8F8F9;
 	border-top: 8px solid #F1F1F1;
-	@include respond-to('non-mobile') {	
-		height: 100%;
-		width: 100%;
-		box-sizing: border-box;
-		padding: 0 20px 0 20px;
-	}
 	form {
 		display: none;
 		margin: 10px 0 0 0;
