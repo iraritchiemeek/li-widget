@@ -27,6 +27,25 @@ $(document).ready(function () {
 		}
 	})
 
+	$('.li-form__back').click(function () {
+		if ($('.li-form form').data('current') == 'gender') {
+			setCurrentFieldData('smoker')
+			showCurrentFormField()
+			incrementProgress('50%')
+		} else if ($('.li-form form').data('current') == 'smoker') {
+			setCurrentFieldData('age')
+			showCurrentFormField()
+			incrementProgress('75%')
+		} else if ($('.li-form form').data('current') == 'age') {
+			if (validAge()) {
+				setCurrentFieldData('cover-amount')
+				showCurrentFormField()
+				incrementProgress('100%')
+			}
+			
+		}
+	})
+
 	$('.form-field__button').click(function(e) {
 		if (e.target.dataset.pos == 'right') {
 			$('.form-field__selected').animate({'right': '20px'})
@@ -72,6 +91,7 @@ $(document).ready(function () {
             	$('.li-form form').fadeOut(function () {
         			$('.form-field--age').hide()
         			$('.form-field--cover-amount').show()
+        			$('.li-form__next span').text('Submit')
         			$('.li-form form').fadeIn()
             	})
             	break;

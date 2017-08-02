@@ -84,12 +84,24 @@ html, body {
 		height: calc(100% - 120px);
 		width: 100%;
 	}
+	&__back {
+		left: 10%;
+		position: absolute;
+		height: 50px;
+		width: 30px;
+		background-image: url('../imgs/back-arrow.svg');
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		bottom: 20px;
+	}
 	&__next {
 		@include center-horizontal;
 		position: absolute;
 		bottom: 20px;
 		width: 100px;
 		height: 50px;
+		border-radius: 5px;
 		background-color: $green;
 		span {
 			@include center;
@@ -108,11 +120,12 @@ html, body {
 	width: 100%;
 	display: none;
 	h1 {
+		font-weight: 400;
 		margin: 0 10px 0 10px;
 		padding: 0 0 0 0;
 		font-family: $oswald-font;
 		text-align: center;
-		font-size: 1.4em;
+		font-size: 1.6em;
 	}
 	&--smoker, &--age {
 		display: none; // TEMP
@@ -123,7 +136,6 @@ html, body {
 		padding: 0 20px 0 20px;
 		box-sizing: border-box;
 		margin: 20px 0 0 0;
-		background-color: #f1f1f1;
 	}
 	&__selected {
 		width: calc(50% - 20px);
@@ -290,6 +302,7 @@ input[type=range]::-ms-fill-upper {
 	}
 	&__button {
 		@include center-horizontal;
+		border-radius: 5px;
 		position: absolute;
 		bottom: 20px;
 		width: 200px;
@@ -327,7 +340,7 @@ input[type=range]::-ms-fill-upper {
 		width: 0%;
 		border-radius: 5px;
 		height: 5px;
-		background-color: #bbbbbb;
+		background-color: $green;
 		transition-duration: 2s;
 	}
 }

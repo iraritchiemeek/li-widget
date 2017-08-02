@@ -46,6 +46,16 @@ html, body {
     margin: 10px 0 0 0;
     height: calc(100% - 120px);
     width: 100%; }
+  .li-form__back {
+    left: 10%;
+    position: absolute;
+    height: 50px;
+    width: 30px;
+    background-image: url("../imgs/back-arrow.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    bottom: 20px; }
   .li-form__next {
     left: 50%;
     transform: translateX(-50%);
@@ -54,6 +64,7 @@ html, body {
     bottom: 20px;
     width: 100px;
     height: 50px;
+    border-radius: 5px;
     background-color: #4CAE4C; }
     .li-form__next span {
       top: 50%;
@@ -72,11 +83,12 @@ html, body {
   width: 100%;
   display: none; }
   .form-field h1 {
+    font-weight: 400;
     margin: 0 10px 0 10px;
     padding: 0 0 0 0;
     font-family: "Oswald", Arial, Helvetica, sans-serif;
     text-align: center;
-    font-size: 1.4em; }
+    font-size: 1.6em; }
   .form-field--smoker, .form-field--age {
     display: none; }
   .form-field__select {
@@ -84,8 +96,7 @@ html, body {
     height: 70px;
     padding: 0 20px 0 20px;
     box-sizing: border-box;
-    margin: 20px 0 0 0;
-    background-color: #f1f1f1; }
+    margin: 20px 0 0 0; }
   .form-field__selected {
     width: calc(50% - 20px);
     height: 70px;
@@ -277,6 +288,7 @@ input[type=range]::-ms-fill-upper {
     left: 50%;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
+    border-radius: 5px;
     position: absolute;
     bottom: 20px;
     width: 200px;
@@ -319,7 +331,7 @@ input[type=range]::-ms-fill-upper {
     width: 0%;
     border-radius: 5px;
     height: 5px;
-    background-color: #bbbbbb;
+    background-color: #4CAE4C;
     transition-duration: 2s; }
 
 /*# sourceMappingURL=index.css.map */
