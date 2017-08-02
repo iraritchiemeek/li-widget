@@ -1,15 +1,22 @@
 $(document).ready(function () {
 
-	$('.start__button').click(function () {
-		$('.start').fadeOut(function () {
+	// $('.start__button').click(function () {
+	// 	$('.start').fadeOut(function () {
+	// 		setCurrentFieldData('gender')
+	// 		showCurrentFormField()
+	// 		incrementProgress('25%')
+	// 	})
+	// })
+
+	setCurrentFieldData('start')
+	showCurrentFormField()
+
+	$('.next').click(function () {
+		if ($('.li-form form').data('current') == 'start') {
 			setCurrentFieldData('gender')
 			showCurrentFormField()
 			incrementProgress('25%')
-		})
-	})
-
-	$('.li-form__next').click(function () {
-		if ($('.li-form form').data('current') == 'gender') {
+		} else if ($('.li-form form').data('current') == 'gender') {
 			setCurrentFieldData('smoker')
 			showCurrentFormField()
 			incrementProgress('50%')
@@ -27,7 +34,7 @@ $(document).ready(function () {
 		}
 	})
 
-	$('.li-form__back').click(function () {
+	$('.back').click(function () {
 		if ($('.li-form form').data('current') == 'gender') {
 			setCurrentFieldData('smoker')
 			showCurrentFormField()
@@ -66,10 +73,22 @@ $(document).ready(function () {
 
 	function showCurrentFormField() {
 		switch($('.li-form form').data('current')) {
+		    case 'start':
+		    	$('.next span').text('Get Started')
+		    	$('.next').css({'width': '150px'})
+		    	$('.form-field--start').show()
+		    	$('.back').hide()
+				$('.li-form form').show()
+		        break;
 		    case 'gender':
-		    	$('.form-field').hide()
-		        $('.form-field--gender').show()
-				$('.li-form form').fadeIn()
+		    	$('.next span').text('Next')
+		    	$('.next').removeAttr('style')
+		    	$('.back').show()
+		    	$('.li-form form').fadeOut(function () {
+			    	$('.form-field--start').hide()
+			        $('.form-field--gender').show()
+					$('.li-form form').fadeIn()
+				})
 		        break;
 		    case 'smoker':
 		    	$('.li-form form').fadeOut(function () {
@@ -91,7 +110,7 @@ $(document).ready(function () {
             	$('.li-form form').fadeOut(function () {
         			$('.form-field--age').hide()
         			$('.form-field--cover-amount').show()
-        			$('.li-form__next span').text('Submit')
+        			$('.next span').text('Submit')
         			$('.li-form form').fadeIn()
             	})
             	break;

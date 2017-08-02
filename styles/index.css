@@ -46,37 +46,6 @@ html, body {
     margin: 10px 0 0 0;
     height: calc(100% - 120px);
     width: 100%; }
-  .li-form__back {
-    left: 10%;
-    position: absolute;
-    height: 50px;
-    width: 30px;
-    background-image: url("../imgs/back-arrow.svg");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    bottom: 20px; }
-  .li-form__next {
-    left: 50%;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    position: absolute;
-    bottom: 20px;
-    width: 100px;
-    height: 50px;
-    border-radius: 5px;
-    background-color: #4CAE4C; }
-    .li-form__next span {
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      font-family: "Oswald", Arial, Helvetica, sans-serif;
-      font-size: 1.6em;
-      color: white;
-      position: relative;
-      text-align: center;
-      display: inline-block; }
 
 .form-field {
   height: 250px;
@@ -305,6 +274,39 @@ input[type=range]::-ms-fill-upper {
       position: relative;
       text-align: center;
       display: inline-block; }
+
+.back {
+  left: 10%;
+  position: absolute;
+  height: 50px;
+  width: 30px;
+  background-image: url("../imgs/back-arrow.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  bottom: 20px; }
+
+.next {
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  position: absolute;
+  bottom: 20px;
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #4CAE4C; }
+  .next span {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-family: "Oswald", Arial, Helvetica, sans-serif;
+    font-size: 1.6em;
+    color: white;
+    position: relative;
+    text-align: center;
+    display: inline-block; }
 
 .progress {
   left: 50%;
