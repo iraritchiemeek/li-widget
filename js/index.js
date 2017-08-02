@@ -4,7 +4,7 @@ $(document).ready(function () {
 	// 	$('.start').fadeOut(function () {
 	// 		setCurrentFieldData('gender')
 	// 		showCurrentFormField()
-	// 		incrementProgress('25%')
+	// 		setProgress('25%')
 	// 	})
 	// })
 
@@ -15,20 +15,20 @@ $(document).ready(function () {
 		if ($('.li-form form').data('current') == 'start') {
 			setCurrentFieldData('gender')
 			showCurrentFormField()
-			incrementProgress('25%')
+			setProgress('25%')
 		} else if ($('.li-form form').data('current') == 'gender') {
 			setCurrentFieldData('smoker')
 			showCurrentFormField()
-			incrementProgress('50%')
+			setProgress('50%')
 		} else if ($('.li-form form').data('current') == 'smoker') {
 			setCurrentFieldData('age')
 			showCurrentFormField()
-			incrementProgress('75%')
+			setProgress('75%')
 		} else if ($('.li-form form').data('current') == 'age') {
 			if (validAge()) {
 				setCurrentFieldData('cover-amount')
 				showCurrentFormField()
-				incrementProgress('100%')
+				setProgress('100%')
 			}
 			
 		}
@@ -36,20 +36,21 @@ $(document).ready(function () {
 
 	$('.back').click(function () {
 		if ($('.li-form form').data('current') == 'gender') {
+			setCurrentFieldData('start')
+			showCurrentFormField()
+			setProgress('0%')
+		} else if ($('.li-form form').data('current') == 'smoker') {
+			setCurrentFieldData('gender')
+			showCurrentFormField()
+			setProgress('25%')
+		} else if ($('.li-form form').data('current') == 'age') {
 			setCurrentFieldData('smoker')
 			showCurrentFormField()
-			incrementProgress('50%')
-		} else if ($('.li-form form').data('current') == 'smoker') {
+			setProgress('50%')			
+		} else if ($('.li-form form').data('current') == 'cover-amount') {
 			setCurrentFieldData('age')
 			showCurrentFormField()
-			incrementProgress('75%')
-		} else if ($('.li-form form').data('current') == 'age') {
-			if (validAge()) {
-				setCurrentFieldData('cover-amount')
-				showCurrentFormField()
-				incrementProgress('100%')
-			}
-			
+			setProgress('75%')			
 		}
 	})
 
@@ -76,6 +77,7 @@ $(document).ready(function () {
 		    case 'start':
 		    	$('.next span').text('Get Started')
 		    	$('.next').css({'width': '150px'})
+		    	$('.form-field').hide()
 		    	$('.form-field--start').show()
 		    	$('.back').hide()
 				$('.li-form form').show()
@@ -85,21 +87,21 @@ $(document).ready(function () {
 		    	$('.next').removeAttr('style')
 		    	$('.back').show()
 		    	$('.li-form form').fadeOut(function () {
-			    	$('.form-field--start').hide()
+			    	$('.form-field').hide()
 			        $('.form-field--gender').show()
 					$('.li-form form').fadeIn()
 				})
 		        break;
 		    case 'smoker':
 		    	$('.li-form form').fadeOut(function () {
-					$('.form-field--gender').hide()
+					$('.form-field').hide()
 					$('.form-field--smoker').show()
 					$('.li-form form').fadeIn()
 		    	})
 		    	break;
 	        case 'age':
 	        	$('.li-form form').fadeOut(function () {
-	    			$('.form-field--smoker').hide()
+	    			$('.form-field').hide()
 	    			$('.form-field--age').show()
 	    			$('.li-form form').fadeIn(function () {
 	    				$('input').focus()
@@ -108,7 +110,7 @@ $(document).ready(function () {
 	        	break;
             case 'cover-amount':
             	$('.li-form form').fadeOut(function () {
-        			$('.form-field--age').hide()
+        			$('.form-field').hide()
         			$('.form-field--cover-amount').show()
         			$('.next span').text('Submit')
         			$('.li-form form').fadeIn()
@@ -117,7 +119,7 @@ $(document).ready(function () {
 		}
 	}
 
-	function incrementProgress(fillPercent) {
+	function setProgress(fillPercent) {
 		$('.progress__fill').css({'width': fillPercent})
 	}
 

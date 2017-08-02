@@ -52,6 +52,19 @@ html, body {
 	}
 }
 
+.icon {
+	@include center-horizontal;
+	position: relative;
+	background-color: #f1f1f1;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	margin: 10px 0 0 0;
+	background-image: url('../imgs/doctor.svg');
+	background-size: contain;
+	background-position: center;
+}
+
 .li-form {
 	@include center-horizontal;
 	top: 50px;
@@ -65,18 +78,6 @@ html, body {
 		width: 100%;
 		box-sizing: border-box;
 		padding: 0 20px 0 20px;
-	}
-	&__icon {
-		@include center-horizontal;
-		position: relative;
-		background-color: #f1f1f1;
-		border-radius: 50%;
-		width: 100px;
-		height: 100px;
-		margin: 10px 0 0 0;
-		background-image: url('../imgs/doctor.svg');
-		background-size: contain;
-		background-position: center;
 	}
 	form {
 		display: none;
@@ -301,6 +302,7 @@ input[type=range]::-ms-fill-upper {
 	background-position: center;
 	background-repeat: no-repeat;
 	bottom: 20px;
+	opacity: 0.5;
 }
 .next {
 	@include center-horizontal;

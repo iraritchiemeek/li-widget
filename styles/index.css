@@ -12,6 +12,20 @@ html, body {
       height: 425px;
       width: 100%; } }
 
+.icon {
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  position: relative;
+  background-color: #f1f1f1;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 10px 0 0 0;
+  background-image: url("../imgs/doctor.svg");
+  background-size: contain;
+  background-position: center; }
+
 .li-form {
   left: 50%;
   transform: translateX(-50%);
@@ -28,19 +42,6 @@ html, body {
       width: 100%;
       box-sizing: border-box;
       padding: 0 20px 0 20px; } }
-  .li-form__icon {
-    left: 50%;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    position: relative;
-    background-color: #f1f1f1;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    margin: 10px 0 0 0;
-    background-image: url("../imgs/doctor.svg");
-    background-size: contain;
-    background-position: center; }
   .li-form form {
     display: none;
     margin: 10px 0 0 0;
@@ -284,7 +285,8 @@ input[type=range]::-ms-fill-upper {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  bottom: 20px; }
+  bottom: 20px;
+  opacity: 0.5; }
 
 .next {
   left: 50%;
